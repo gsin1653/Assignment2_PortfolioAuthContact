@@ -97,8 +97,11 @@ app.use('/contact', contactRouter);
 app.use('/book', booksRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+
+app.use(function(req, res, next){
+  res.status(404);
+  res.locals.message = err.message;
+  res.render('pages/error', { title: 'Error'});
 });
 
 // error handler
@@ -109,7 +112,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', { title: 'Error'});
+  res.render('pages/error', { title: 'Error'});
 });
 
 module.exports = app;
