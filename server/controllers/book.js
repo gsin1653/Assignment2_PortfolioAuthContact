@@ -17,7 +17,7 @@ module.exports.displayBookList = (req, res, next) => {
                 displayName: req.user ? req.user.displayName : ''
             });
         }
-    });
+    }).sort({name:1});     // to Sort by name 
 };
 
 /* GET router for the ADD Book page - CREATE */
