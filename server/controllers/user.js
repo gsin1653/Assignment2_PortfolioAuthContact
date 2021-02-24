@@ -70,7 +70,7 @@ module.exports.processLoginPage = (req, res, next) => {
             }, token: authToken});
             */
 
-            return res.redirect('/book/list');
+            return res.redirect('/contact/list');
         });
     })(req, res, next);
 }
@@ -131,7 +131,7 @@ module.exports.processRegisterPage = (req, res, next) => {
             */
 
             return passport.authenticate('local')(req, res, () => {
-                res.redirect('/book/list')
+                res.redirect('/contact/list')   // redirecting to COntacts List Page After Login succesfull
             });
         }
     });

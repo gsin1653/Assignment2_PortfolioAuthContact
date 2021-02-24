@@ -9,17 +9,18 @@
             <form  method="POST">
                 <div class="form-group">
                   <label for="contactName">Name</label>
-                  <input type="text" class="form-control" name="name" id="name" value="<%= contact.name %>" required>
+                  <input type="text" class="form-control" name="name" id="name" value="<%= contact.contactToEdit.name %>" required>
                 </div>
                 <div class="form-group">
                   <label for="contactNumber">Number</label>
-                  <input type="text" class="form-control" name="number" id="number" value="<%= contact.number %>" required>
+                  <input type="text" class="form-control" name="number" id="number" value="<%= contact.contactToEdit.number %>" required>
                 </div>
                 <div class="form-group">
                     <label for="contactEmail">Email</label>
-                    <input type="text" class="form-control" name="emailId" id="emailId" value="<%= contact.email %>" required>
+                    <input type="text" class="form-control" name="emailId" id="emailId" value="<%= contact.contactToEdit.email %>" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Update Contact</button>
+                <a href="/contact/delete/<%= contact._id %>" class="btn btn-danger">Delete</a>
                 <button href="/contact/list" class="btn btn-warning">Cancel</button>
             </form>
         </div>
