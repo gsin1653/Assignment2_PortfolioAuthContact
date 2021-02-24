@@ -30,20 +30,30 @@ module.exports.displayContactList = (req, res, next) => {
       return console.error(err);
       }else{
            //console.log(contactList);
-          res.render('pages/contact/list', 
-          {
-              title: 'Contact List', 
-              contactList: contactList, 
-              displayName: req.user ? req.user.displayName : ''
-          });
+           if(typeof req.user == 'undefined'){    //if user is not logedin then redirect to home page not allowing user to asscess restriced part of application
+                res.redirect('/');
+           }
+           else{
+            res.render('pages/contact/list', 
+            {
+                title: 'Contact List', 
+                contactList: contactList, 
+                displayName: req.user ? req.user.displayName : ''
+            });
+           }
       }
-  });
+  }).sort({name:1});     // to Sort by name 
 };
 
 /* GET router for the ADD Contact page - CREATE */
 module.exports.displayAddContact =  (req, res, next) => {
+    if(typeof req.user == 'undefined'){    //if user is not logedin then redirect to home page not allowing user to asscess restriced part of application
+        res.redirect('/');
+   }
+   else{
   res.render('pages/contact/add', {title: 'Add Contact', 
-  displayName: req.user ? req.user.displayName : ''})
+  displayName: req.user ? req.user.displayName : ''});
+   }
 };
 
 /* POST router for the ADD Contact page - CREATE */
@@ -73,9 +83,17 @@ module.exports.displayEditContact =  (req, res, next) => {
           res.end(err);
       } else {
           // show the edit view
-          res.render('pages/contact/edit', {title: 'Edit Contact', contact: contactToEdit, 
+          if(typeof req.user == 'undefined'){    //if user is not logedin then redirect to home page not allowing user to asscess restriced part of application
+            res.redirect('/');
+       }
+       else{
+          res.render('pages/contact/edit', {title: 'Edit Contact', contact:{
+            _id:id,
+            contactToEdit
+          } , 
           displayName: req.user ? req.user.displayName : ''})
-      }
+       }
+       }
   });
 };
 
@@ -110,8 +128,13 @@ module.exports.performContactDeletion =  (req, res, next) => {
           res.end(err);
       } else {
           // refresh Contact list
+          if(typeof req.user == 'undefined'){    //if user is not logedin then redirect to home page not allowing user to asscess restriced part of application
+            res.redirect('/');
+       }
+       else{
           res.redirect('/contact/list');
       }
+    }
   });
 };
 
