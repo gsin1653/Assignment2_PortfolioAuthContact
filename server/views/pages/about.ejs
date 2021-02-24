@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ../partials/header.ejs %>
+
+    <%- include ../partials/main_nav.ejs %>
+
+        <body>
+            <div class="container">
+                <div class="bs-docs-section">
+                    <div class="row">
+                        <div>
+                            <h2 class="text-center">About Me</h2>
+                            <div class="text-center"> <img src="/Assets/images/myPic.png" alt="Gagandeep's Face"
+                                    height="250" width="250">
+                            </div>
+                            <p class=" text-center mt-4">Hi, I'm Gagandeep Singh. I'm a 26-year-old Mean Stack Web
+                                developer and blogger
+                                from
+                                India
+                                and currently residing in Toronto, Ontario. My current focuses are finding ways to use
+                                different
+                                technologies to address some complex problems and create long-lasting community!</p>
+
+
+                            <h2 class="mt-4 text-center">Contact Me</h2>
+                            <p class=" text-center mb-5">Interested in having a chat? Feel free to shoot me a DM anytime
+                                on
+                                <a href="https://www.linkedin.com/in/gagandeep-singh-08/">LinkedIn.</a> I'm also always
+                                updating
+                                project on
+                                <a href="https://github.com/gsin1653/Assignment2_Portfolio">GitHub</a> if you wanna follow me there! <br>
+                                <small>For business inquries, please feel free to
+                                    send me an e-mail at <mark><a class=""
+                                            href="mailto:er.gagandeep.singh08@gmail.com">er.gagandeep.singh08@gmail.com</a></mark></small>
+                            </p>
+
+                            <h2 class="newsletter text-center">Resume 👇🏽
+                            </h2>
+                            <div class="col px-md-5 text-center">
+                                <button type="button" class="btn btn-primary btn-lg veri" type="submit" all
+                                    onclick="window.open('/Assets/data/resume.pdf')">Download Resume</button>
+                            </div>
+
+                        </div>
+                        <table class="table table-hover"></table>
+                        <div data-role="footer" data-position="fixed">
+                            <h1>Your Footer</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+
+        <%- include ../partials/bottom_nav.ejs %>
+
+            <%- include ../partials/footer.ejs %>
+
+</html>

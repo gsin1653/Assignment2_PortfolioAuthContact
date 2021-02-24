@@ -1,0 +1,38 @@
+<% include ../../partials/header.ejs %>
+<% include ../../partials/main_nav.ejs %>
+
+<!-- Main Content section -->
+<main class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-12">
+            <h1><%= title %></h1>
+            <form action="/book/add" method="POST">
+                <div class="form-group">
+                  <label for="bookName">Book Title</label>
+                  <input type="text" class="form-control" name="bookName" id="bookName" required>
+                </div>
+                <div class="form-group">
+                  <label for="bookAuthor">Author</label>
+                  <input type="text" class="form-control" name="bookAuthor"  id="bookAuthor" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookPublished">Book Published</label>
+                    <input type="text" class="form-control" name="bookPublished" id="bookPublished" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookDescription">Description</label>
+                    <textarea class="form-control" name="bookDescription" id="bookDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="bookPrice">Price</label>
+                    <input type="text" class="form-control" name="bookPrice" id="bookPrice" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add New Book</button>
+                <button href="/book/list" class="btn btn-warning">Cancel</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<% include ../../partials/bottom_nav.ejs %>
+<% include ../../partials/footer.ejs %>

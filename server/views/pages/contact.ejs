@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ../partials/header.ejs %>
+    <%- include ../partials/main_nav.ejs %>
+
+        <body>
+
+            <div class="container">
+                <div class="bs-docs-section">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <form method="POST">
+                                <fieldset>
+                                    <h1 class="display-4">
+                                        <%= title %>
+                                    </h1>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">First Name</label>
+                                        <input class="form-control" id="userFirstName" name="userFirstName"
+                                            aria-describedby="User First Name" placeholder="Enter Your First Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Last Name</label>
+                                        <input class="form-control" id="userLastName" name="userLastName"
+                                            aria-describedby="User Last Name" placeholder="Enter Your Last Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Contact Number</label>
+                                        <input class="form-control" id="userContactNumber" name="userContactNumber"
+                                            aria-describedby="User Contact Number" placeholder="Enter Your Contact Number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" class="form-control" id="userEmailId" name="userEmailId"
+                                            aria-describedby="emailHelp" placeholder="Enter email">
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                                            with
+                                            anyone else.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleTextarea">Enter Your Message</label>
+                                        <textarea class="form-control" id="userMessage" name="userMessage"
+                                            rows="3"></textarea>
+                                    </div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModalCenter">
+                                          Send  
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation!</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Thanks! for the feedback or question click Submit to send message.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div><br></div>
+                            </form>
+                        </div>
+                        <%- include ../partials/aside_about.ejs %>
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>Your Footer</h1>
+            </div>
+
+            <%- include ../partials/bottom_nav.ejs %>
+
+                <%- include ../partials/footer.ejs %>
+        </body>
+
+</html>

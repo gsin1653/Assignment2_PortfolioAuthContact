@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ../partials/header.ejs %>
+
+  <%- include ../partials/main_nav.ejs %>
+
+    <body>
+      <div class="container">
+        <h4>
+          <% if (contact.firstName !=null && contact.firstName !='' ){ %>
+            <p>
+                    <div class="alert alert-dismissible alert-success">
+                        <button type="button" class="close"
+                            data-dismiss="alert">&times;</button>
+                        <strong>Thanks! <%= contact.firstName %> <%= contact.lastName %> for connecting</strong>
+                        <p> </p>
+                        Message: "<%= contact.message %>" is sent as Feedback with Email ID: "<%=contact.email %>" and Contact Number: <%= contact.number %> .
+                    </div>
+            </p>
+            <% } %>
+        </h4>
+        <div class="bs-docs-section">
+          <div class="row">
+           
+            <%- include ../partials/main.ejs %>
+
+              <%- include ../partials/aside_about.ejs %>
+          </div>
+        </div>
+      </div>
+      </main>
+    </body>
+    <div data-role="footer" data-position="fixed">
+      <h1>Your Footer</h1>
+    </div>
+    <%- include ../partials/bottom_nav.ejs %>
+
+      <%- include ../partials/footer.ejs %>
+
+</html>
